@@ -1,0 +1,309 @@
+:root {
+	--body-padding: var(--sp-12);
+	--flexdir: row;
+}
+
+@media screen and (max-width: 800px) {
+	:root {
+		--body-padding: var(--sp-2);
+		--flexdir: column;
+	}
+}
+
+/* ------------------------------------------------------------ */
+/* Top level DOM */
+/* ------------------------------------------------------------ */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	padding: var(--sp-2) var(--body-padding) var(--body-padding) var(--body-padding);
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	gap: var(--sp-12);
+}
+
+/* ------------------------------------------------------------ */
+/* Hero Canvas */
+/* ------------------------------------------------------------ */
+#hero {
+	margin-top: calc(var(--body-padding));
+	height: 80vh;
+	min-height: 720px;
+	width: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: perspective(1000px);
+}
+
+#hero > canvas {
+	--gradient-color-1: #c3e4ff;
+	--gradient-color-2: #6ec3f4;
+	--gradient-color-3: #eae2ff;
+	--gradient-color-4: #b9beff;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-radius: var(--br-3);
+}
+
+#hero > #title {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 2;
+}
+
+/* Visint */
+#hero-visint-a {
+	padding: var(--sp-3);
+	width: 360px;
+	height: 360px;
+	position: absolute;
+	top: -80px;
+	left: -120px;
+	background-color: var(--clr-surface);
+	z-index: 3;
+	border-radius: var(--br-3);
+	box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12);
+	transform: translateZ(60px) rotate(-16deg);
+}
+
+#hero-visint-a > div {
+	width: 100%;
+	height: 100%;
+	background-image: url(assets/bd-1.webp);
+	border-radius: var(--br-2);
+	background-size: cover;
+	background-position: center;
+}
+
+#hero-visint-b {
+	padding: var(--sp-3);
+	width: 360px;
+	height: 360px;
+	position: absolute;
+	bottom: -120px;
+	right: -120px;
+	background-color: var(--clr-surface);
+	z-index: 3;
+	border-radius: var(--br-3);
+	box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+	transform: translateZ(60px) rotate(16deg);
+}
+
+#hero-visint-b > div {
+	width: 100%;
+	height: 100%;
+	background-image: url(assets/bd-2.webp);
+	border-radius: var(--br-2);
+	background-size: cover;
+	background-position: center;
+}
+
+#social-array {
+	width: 100%;
+	height: var(--sp-6);
+	display: flex;
+	justify-content: center;
+	gap: var(--sp-5);
+}
+
+#social-array > * {
+	height: 100%;
+	width: var(--sp-6);
+	fill: var(--clr-surface);
+	transition: 120ms;
+}
+
+#social-array > *:hover {
+	fill: var(--clr-accent);
+}
+
+/* ------------------------------------------------------------ */
+/* About */
+/* ------------------------------------------------------------ */
+section#about {
+	display: flex;
+	flex-direction: var(--flexdir);
+	justify-content: space-between;
+}
+
+section#about > * {
+	flex: 1;
+}
+
+/* Illust */
+section#about > .illust {
+	height: 100%;
+	min-height: 560px;
+	background-image: url(assets/illust-1.webp);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* Body */
+section#about > .body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: var(--sp-2);
+}
+
+/* ------------------------------------------------------------ */
+/* Mint Button
+/* ------------------------------------------------------------ */
+
+#mint-button-host {
+	width: 100%;
+	min-height: calc(var(--sp-12) * 2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: mint-button-in, mint-button-outer-pulse;
+	animation-delay: 300ms, 0;
+	animation-duration: 1650ms, 1200ms;
+	animation-fill-mode: forwards, none;
+	animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55), ease;
+	animation-iteration-count: 1, infinite;
+	animation-direction: normal, alternate;
+	opacity: 0;
+}
+
+@keyframes mint-button-in {
+	from {
+		opacity: 0;
+		transform: translateY(var(--sp-9)) scale(0.5);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes mint-button-outer-pulse {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.08);
+	}
+}
+
+#mint-button-host button {
+	position: relative;
+	padding: var(--sp-2) var(--sp-5);
+	color: var(--clr-surface);
+	background-color: var(--clr-accent);
+	border-style: none;
+	border-radius: var(--br-6);
+	cursor: pointer;
+	transition: 400ms;
+	animation: mint-button-pulse;
+	animation-duration: 1200ms;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes mint-button-pulse {
+	from {
+		outline: 12px solid var(--clr-accent-light);
+	}
+	to {
+		outline: 24px solid var(--clr-accent-light);
+	}
+}
+
+#mint-button-host button::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	outline: var(--ln-primary-mid-24);
+	border-radius: var(--br-6);
+	opacity: 0.4;
+	transition: 400ms;
+	animation: mint-button-before-pulse;
+	animation-duration: 1200ms;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes mint-button-before-pulse {
+	from {
+		outline: 24px solid var(--clr-background);
+	}
+	to {
+		outline: 48px solid var(--clr-background);
+	}
+}
+
+#mint-button-host button:hover {
+	outline: var(--ln-primary-mid-24);
+	transform: scale(1.1) rotate(2deg);
+}
+
+#mint-button-host button:hover::before {
+	outline: var(--ln-primary-mid-48);
+}
+
+#mint-button-host button:active {
+	background-color: var(--clr-secondary);
+	outline: var(--ln-secondary-mid-12);
+	transform: scale(0.96) rotate(2.75deg);
+	transition: 50ms;
+}
+
+#mint-button-host button:active::before {
+	outline: var(--ln-secondary-mid-24);
+	transition: 50ms;
+}
+
+/* ------------------------------------------------------------ */
+/* Further */
+/* ------------------------------------------------------------ */
+section#further {
+	display: flex;
+	flex-direction: var(--flexdir);
+	justify-content: space-between;
+}
+
+section#further > * {
+	flex: 1;
+}
+
+/* Illust */
+section#further > .illust {
+	height: 100%;
+	min-height: 560px;
+	background-image: url(assets/illust-2.webp);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/* Body */
+section#further > .body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: var(--sp-2);
+}

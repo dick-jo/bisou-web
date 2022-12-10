@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bisou by Ina</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+		<link rel="stylesheet" href="style/tokens/_TOKENS_.css" />
+		<link rel="stylesheet" href="style/grid.global.style.css" />
+		<link rel="stylesheet" href="style/responsive.global.style.css" />
+		<link rel="stylesheet" href="style/typography.style.css" />
+		<link rel="stylesheet" href="index.style.css" />
+
+		<!-- maki -->
+		<link rel="stylesheet" type="text/css" href="lib/maki/maki.css" />
+	</head>
+
+	<body>
+		<div id="visint-host">
+			<div id="visint-a" data-depth="0.5"></div>
+		</div>
+
+		<a href="./bisou-dolls.html" id="bisou-dolls-tile" class="index-tile" data-maki="blur-in">
+			<div role="img" aria-label="Bisou Dolls thumbnail image"></div>
+
+			<div class="body">
+				<h2>Bisou Dolls</h2>
+				<div data-size="large"><span data-mono>→</span></div>
+			</div>
+		</a>
+
+		<a href="#" id="bisou-bijouterie-tile" class="index-tile" data-maki="blur-in">
+			<div role="img" aria-label="Bisou Dolls thumbnail image"></div>
+
+			<div class="body">
+				<h2>Bisou Bijouterie</h2>
+				<div data-size="large"><span data-mono>→</span></div>
+			</div>
+		</a>
+
+		<!--  -->
+		<script src="lib/maki/maki.js"></script>
+		<script>
+			maki()
+
+			const parallaxInstance = new Parallax(document.querySelector(`#visint-host`))
+		</script>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+{
+	"clr": {
+		"type": "color",
+		"accent": { "value": "#AC99F6", "type": "color" },
+		"accent-light": { "value": "#ded6fc", "type": "color" },
+		"secondary": { "value": "#E6A9DA" },
+		"surface": { "value": "#ffffff" },
+		"background": { "value": "#eeebfd" },
+		"text": { "value": "#424242" }
+	}
+}

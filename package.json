@@ -1,0 +1,21 @@
+{
+	"name": "bisou-web",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"tokens-build": "node config/style-dictionary.build.js"
+	},
+	"author": "three",
+	"license": "ISC",
+	"devDependencies": {
+		"style-dictionary": "^3.7.1",
+		"vite": "^4.0.0"
+	},
+	"dependencies": {
+		"whatamesh": "^0.0.1"
+	}
+}

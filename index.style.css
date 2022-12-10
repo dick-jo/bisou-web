@@ -1,0 +1,138 @@
+/* ------------------------------------------------------------ */
+/* Responsive */
+/* ------------------------------------------------------------ */
+:root {
+	--flex: row;
+}
+
+@media screen and (max-width: 960px) {
+	:root {
+		--flex: column;
+	}
+}
+
+/* ------------------------------------------------------------ */
+/* Top level DOM */
+/* ------------------------------------------------------------ */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	padding: 0 var(--sp-12);
+	display: flex;
+	flex-direction: var(--flex);
+	justify-content: center;
+	align-items: center;
+	gap: var(--sp-5);
+}
+
+/* ------------------------------------------------------------ */
+/* Index tiles */
+/* ------------------------------------------------------------ */
+.index-tile {
+	height: fit-content;
+	width: 100%;
+	min-width: fit-content;
+	padding: var(--sp-2);
+	display: flex;
+	align-items: center;
+	gap: var(--sp-4);
+	border: var(--ln-accent-light-1);
+	border-radius: var(--brr);
+	background-color: rgba(255, 255, 255, 0.72);
+	backdrop-filter: blur(var(--sp-2));
+	box-shadow: 0 8px 120px rgba(0, 0, 0, 0.12);
+	cursor: pointer;
+	transition: 400ms;
+}
+
+.index-tile:hover {
+	border: var(--ln-accent-1);
+}
+
+/* Thumbnail img */
+.index-tile > [role='img'] {
+	height: calc(var(--sp-12) * 1.5);
+	min-height: var(--sp-12);
+	aspect-ratio: 1 / 1;
+	border: var(--ln-accent-light-1);
+	border-radius: var(--brr);
+}
+
+#bisou-dolls-tile > [role='img'] {
+	background-image: url('./assets/bisou-doll-thumb.webp');
+	background-position: center;
+	background-size: 150%;
+}
+
+#bisou-bijouterie-tile > [role='img'] {
+	background-image: url('./assets/bisou-bijouterie-thumb.webp');
+	background-position: center;
+	background-size: 150%;
+}
+
+/* Body */
+.index-tile > .body {
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: var(--sp-4);
+}
+
+/* Arrow */
+.index-tile > .body > div:last-of-type {
+	height: var(--sp-9);
+	min-height: var(--sp-9);
+	width: var(--sp-9);
+	min-width: var(--sp-9);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: var(--ln-1);
+	border-radius: var(--brr);
+	transition: 400ms;
+}
+
+.index-tile:hover > .body > div:last-of-type {
+	background-color: var(--clr-accent);
+	color: var(--clr-surface);
+}
+
+.index-tile > .body > div:last-of-type > * {
+	/* OPTICAL ADJUST */
+	transform: translateY(calc(-5%));
+}
+
+/* ------------------------------------------------------------ */
+/* Visint */
+/* ------------------------------------------------------------ */
+#visint-host {
+	position: fixed;
+	top: -16%;
+	left: -25%;
+	width: 125vh;
+	height: 125vh;
+	z-index: -1;
+}
+
+#visint-a {
+	position: fixed;
+	top: -50%;
+	left: -50%;
+	width: 100%;
+	height: 100%;
+	background-image: url('./assets/wings-white.png');
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}

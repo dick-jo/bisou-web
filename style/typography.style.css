@@ -1,0 +1,66 @@
+@font-face {
+	font-family: Fecktor;
+	src: url(../assets/fecktor-regular.otf) format('opentype');
+	/* font-weight: 100 1000; */
+}
+
+* {
+	font-family: 'Quicksand', sans-serif;
+}
+
+[data-mono] {
+	font-family: 'JetBrains Mono', monospace;
+}
+
+h1,
+h2,
+h3 {
+	color: var(--clr-accent);
+}
+
+h1 {
+	font-family: 'Fecktor', sans-serif;
+	font-size: 12vw;
+	color: var(--clr-surface);
+	font-weight: 100;
+}
+
+h2 {
+	font-size: var(--fs-4);
+	/* line-height: var(--fs-4); */
+}
+
+h2[data-size='large'] {
+	font-size: var(--fs-8);
+	line-height: var(--fs-8);
+}
+
+a {
+	color: var(--clr-accent);
+	text-decoration: none;
+}
+
+a[data-size='large'] {
+	font-size: var(--fs-4);
+}
+
+p {
+	color: var(--clr-text);
+	font-weight: 500;
+	font-size: var(--fs-2);
+	line-height: var(--fs-4);
+}
+
+span.em {
+	font-weight: 900;
+}
+
+span.prehead {
+	font-size: var(--fs-2);
+	font-weight: 600;
+	color: var(--clr-secondary);
+}
+
+button {
+	font-size: var(--fs-3);
+}
